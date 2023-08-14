@@ -1,17 +1,38 @@
 .header {
+  display: flex;
   flex-direction: row;
-  font-family: Irish Grover, Serif, Sans-serif, Monospace;
+  justify-content: space-around;
+  align-items: center;
   background: #a92222;
-  width: 22.5rem;
-  height: 4.625rem;
-}
-
-.headerH1 {
-}
-
-.headerP {
-}
-
-.hgroup {
-  flex-direction: column;
+  height: 74px;
+  padding: 10px;
+  .img {
+    width: 60px;
+    height: 51px;
+    flex-shrink: 0;
+    background: #a92222 50% / cover no-repeat;
+  }
+  .hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 202px;
+    height: 56px;
+    flex-shrink: 0;
+    .headerH1 {
+      color: #fff;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .headerP {
+      color: #fff;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
 }
