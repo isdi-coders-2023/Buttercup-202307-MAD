@@ -8,7 +8,16 @@ export function Menu() {
         <div>
           <ul>
             <li>
-              <a href="#"></a>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#"> Cards</a>
+            </li>
+            <li>
+              <a href="#">Create</a>
+            </li>
+            <li>
+              <a href="#">Favourites</a>
             </li>
           </ul>
         </div>
