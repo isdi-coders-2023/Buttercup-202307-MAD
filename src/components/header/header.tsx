@@ -1,11 +1,17 @@
 import { Menu } from '../menu/menu';
+import styles from './header.module.scss';
 
 export function Header() {
   return (
-    <header>
-      <hgroup>
-        <h1>The Lord of the Rings</h1>
-        <p>Card Game</p>
+    <header className={styles.header}>
+      <img
+        src="../../../assets/the-ring.png"
+        alt="El anillo unico"
+        className={styles.img}
+      />
+      <hgroup className={styles.hgroup}>
+        <h1 className={styles.headerH1}>The Lord of the Rings</h1>
+        <p className={styles.headerP}>The card Game</p>
       </hgroup>
       <Menu></Menu>
     </header>
