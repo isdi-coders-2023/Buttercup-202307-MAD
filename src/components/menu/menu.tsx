@@ -1,19 +1,10 @@
+import styles from './menu.module.scss';
 export function Menu() {
   return (
     <>
-      <div>
-        <a href="#">
-          <img src="./assets/menu (1).png" alt="" />
-        </a>
-        <div>
-          <ul>
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <nav> </nav>
+      <a href="#" className={styles.a}>
+        <img src="./assets/menu (1).png" alt="" className={styles.img} />
+      </a>
     </>
   );
 }
