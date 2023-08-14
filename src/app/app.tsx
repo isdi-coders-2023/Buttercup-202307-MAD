@@ -1,3 +1,9 @@
+import { Footer } from '../components/footer/footer';
+
 export function App() {
-  return <></>;
+  return (
+    <>
+      <Footer></Footer>
+    </>
+  );
 }
