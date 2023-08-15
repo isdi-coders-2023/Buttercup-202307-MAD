@@ -2,7 +2,7 @@ import styles from './footer.module.scss';
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <address className={styles.address}>LordOfTheRings</address>
+      <address className={styles.address}>TheLordOfTheRings</address>
       <div className={styles.div}>
         <a
           href="https://www.vidaextra.com/estrategia/the-lord-of-the-rings-adventure-card-game-como-acabe-jugando-a-cartas-sauron"
