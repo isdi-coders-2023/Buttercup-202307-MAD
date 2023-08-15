@@ -1,0 +1,86 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 74vh;
+  font-size: 1em;
+  .navFilter {
+    .ul {
+      display: none;
+    }
+  }
+  .table {
+    border-collapse: collapse;
+    margin: 1em;
+    .thead {
+      .trThead {
+        .name {
+          width: 100px;
+          text-align: start;
+        }
+        .sphere {
+          width: 150px;
+        }
+        .type {
+          width: 500px;
+        }
+        .sets {
+          width: 50px;
+          text-align: end;
+        }
+      }
+    }
+  }
+}
+.tbody:nth-child(odd) {
+  background-color: aquamarine;
+}
+
+@media (min-width: 1024px) {
+  .main {
+    .navFilter {
+      .ul {
+        display: none;
+      }
+    }
+    .table {
+      .thead {
+        .trThead {
+          .name {
+            width: 150px;
+            text-align: start;
+          }
+          .sphere {
+            width: 200px;
+          }
+          .type {
+            width: 100px;
+          }
+          .cost {
+            width: 75px;
+          }
+          .power {
+            width: 60px;
+          }
+          .attack {
+            width: 60px;
+          }
+          .defense {
+            width: 60px;
+          }
+          .heath {
+            width: 100px;
+          }
+          .traits {
+            width: 100px;
+          }
+          .sets {
+            width: 100px;
+            text-align: end;
+          }
+        }
+      }
+    }
+  }
+}
