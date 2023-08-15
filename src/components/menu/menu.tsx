@@ -1,25 +1,43 @@
+import { useState } from 'react';
 import styles from './menu.module.scss';
 export function Menu() {
-  const displayMenu = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenu = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
+
   return (
     <>
-      <nav className={styles.nav}>
-        <a href="#" className={styles.a}>
-          <img src="./assets/menu (1).png" alt="" className={styles.img} />
-        </a>
-        <div onClick={displayMenu} className={styles.listContainer}>
+      <nav>
+        <div onClick={handleMenu}>
+          <img src="./assets/menu.png" alt="" className={styles.img} />
+        </div>
+        <div className={isOpen ? styles.listContainer : styles.hidden}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <a href="#">Home</a>
+              <a className={styles.a} href="#">
+                Home
+              </a>
             </li>
             <li className={styles.li}>
-              <a href="#"> Cards</a>
+              <a className={styles.a} href="#">
+                Cards
+              </a>
             </li>
             <li className={styles.li}>
-              <a href="#">Create</a>
+              <a className={styles.a} href="#">
+                Create
+              </a>
             </li>
             <li className={styles.li}>
-              <a href="#">Favourites</a>
+              <a className={styles.a} href="#">
+                Favourites
+              </a>
             </li>
           </ul>
         </div>
