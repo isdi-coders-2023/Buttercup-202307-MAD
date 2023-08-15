@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { Footer } from './footer';
+import { ErrorPage } from './error';
 
-describe('Given the component Footer', () => {
+describe('Given the component ErrorPage', () => {
   describe('When we render it', () => {
-    render(<Footer></Footer>);
+    render(<ErrorPage></ErrorPage>);
     test('the component should be in the document', () => {
-      const element = screen.getByText('TheLordOfTheRings');
+      const element = screen.getByText('Error 404');
       expect(element).toBeInTheDocument();
     });
   });
