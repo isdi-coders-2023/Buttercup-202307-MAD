@@ -1,0 +1,58 @@
+.trBody {
+  .name {
+    width: 150px;
+    text-align: start;
+  }
+  .sphere {
+    width: 200px;
+  }
+  .type {
+    width: 100px;
+  }
+  .sets {
+    width: 100px;
+    text-align: end;
+  }
+}
+.width1024 {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .trBody {
+    .name {
+      width: 150px;
+      text-align: start;
+    }
+    .sphere {
+      width: 200px;
+    }
+    .type {
+      width: 100px;
+    }
+    .cost {
+      width: 75px;
+    }
+    .power {
+      width: 60px;
+    }
+    .attack {
+      width: 60px;
+    }
+    .defense {
+      width: 60px;
+    }
+    .heath {
+      width: 100px;
+    }
+    .traits {
+      width: 100px;
+    }
+    .sets {
+      width: 100px;
+      text-align: end;
+    }
+  }
+  .width1024 {
+    display: table-cell;
+  }
+}

@@ -1,4 +1,4 @@
-export type Card = {
+export type CardNoId = {
   pack_code: string;
   pack_name: string;
   type_code: string;
