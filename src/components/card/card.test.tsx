@@ -35,7 +35,7 @@ describe('Given the component Card', () => {
   describe('When we render it', () => {
     render(<Card item={mockState}></Card>);
     test('the component should be in the document', () => {
-      const element = screen.getByText('Aragorn');
+      const element = screen.getByText('Gimli');
       expect(element).toBeInTheDocument();
     });
   });
