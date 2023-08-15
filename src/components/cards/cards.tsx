@@ -2,7 +2,7 @@ import { CardNoId } from '../../model/card';
 import { Card } from '../card/card';
 import styles from './cards.module.scss';
 
-const mockState = [
+const mockStateOne = [
   {
     pack_code: 'Core',
     pack_name: 'Core Set',
@@ -113,7 +113,7 @@ export function Cards() {
               </tr>
             </thead>
             <tbody className={styles.tableBody}>
-              {mockState.map((item: CardNoId) => (
+              {mockStateOne.map((item: CardNoId) => (
                 <Card key={item.position} item={item}></Card>
               ))}
             </tbody>
@@ -138,7 +138,7 @@ export function Cards() {
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
-            {mockState.map((item: CardNoId) => (
+            {mockStateOne.map((item: CardNoId) => (
               <Card item={item}></Card>
             ))}
           </tbody>
