@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  .addres {
+  .address {
     font-family: Irish Grover, Serif, Sans-serif, Monospace;
     color: #000;
     font-size: 16px;
@@ -21,6 +21,22 @@
       justify-content: center;
       .img {
         width: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    .address {
+      font-size: 20px;
+    }
+    .div {
+      .a {
+        .img {
+          gap: 60px;
+          width: 50px;
+        }
       }
     }
   }
