@@ -16,7 +16,7 @@ const mockStateOne = [
     traits: 'Dúnedain. Noble. Ranger.',
     text: 'Sentinel.\n<b>Response:</b> After Aragorn commits to a quest, spend 1 resource from his resource pool to ready him.',
     flavor:
-      '"I am Aragorn son of Arathorn; and if by life or death I can save you, I will."\n<cite>The Fellowship of the Ring</cite>',
+      '`I am Aragorn son of Arathorn; and if by life or death I can save you, I will.`\n<cite>The Fellowship of the Ring</cite>',
     is_unique: true,
     threat: 12,
     willpower: 2,
@@ -42,9 +42,9 @@ const mockStateOne = [
     code: '01002',
     name: 'Théodred',
     traits: 'Noble. Rohan. Warrior.',
-    text: "<b>Response:</b> After Théodred commits to a quest, choose a hero committed to that quest. Add 1 resource to that hero's resource pool.",
+    text: `<b>Response:</b> After Théodred commits to a quest, choose a hero committed to that quest. Add 1 resource to that hero's resource pool.`,
     flavor:
-      '"Not all is dark. Take courage, Lord of the Mark..."\n<cite>Gandalf, The Two Towers</cite>',
+      '`Not all is dark. Take courage, Lord of the Mark...`\n<cite>Gandalf, The Two Towers</cite>',
     is_unique: true,
     threat: 8,
     willpower: 1,
@@ -90,43 +90,39 @@ const mockStateOne = [
 ];
 
 export function Cards() {
-  if (window.innerWidth > 1023) {
-    return (
-      <>
-        <main className={styles.main}>
-          <nav className={styles.navFilter}>
-            <ul className={styles.ul}></ul>
-          </nav>
-          <table className={styles.table}>
-            <thead className={styles.thead}>
-              <tr className={styles.trThead}>
-                <th className={styles.name}>Name</th>
-                <th className={styles.sphere}>Sphere</th>
-                <th className={styles.type}>Type</th>
-                <th className={styles.cost}>Cost</th>
-                <th className={styles.power}>Power</th>
-                <th className={styles.attack}>Attack</th>
-                <th className={styles.defense}>Defense</th>
-                <th className={styles.heath}>Heath</th>
-                <th className={styles.traits}>Traits</th>
-                <th className={styles.sets}>Sets</th>
-              </tr>
-            </thead>
-            <tbody className={styles.tableBody}>
-              {mockStateOne.map((item: CardNoId) => (
-                <Card key={item.position} item={item}></Card>
-              ))}
-            </tbody>
-          </table>
-        </main>
-      </>
-    );
-  }
+  const expansionList: string[] = [
+    'Core Set',
+    'Revised Core Set',
+    'Shadows of Mirkwood',
+    'khazad-dûm',
+    'Dwarrowdelf',
+    'Heirs of Númenor',
+    'Against the Shadow',
+    'The Voice of Isengard',
+    'The Ring-maker',
+    'The Lost Realm',
+    'Angmar Awakened',
+    'Angmar Awakened Campaign extension',
+    'The Grey Havens',
+    'Dream-chaser',
+    'The Sands os Harad',
+    'The Haradrim',
+    'The Wilds of Rhovanion',
+    'Ered Mithrin',
+    'A Shadow in the East',
+    'The Vengeance of Mordor',
+  ];
   return (
     <>
       <main className={styles.main}>
         <nav className={styles.navFilter}>
-          <ul className={styles.ul}></ul>
+          <ol className={styles.ul}>
+            {expansionList.map((item, index) => (
+              <li key={index}>
+                <a href="">{`${item}`}</a>
+              </li>
+            ))}
+          </ol>
         </nav>
         <table className={styles.table}>
           <thead className={styles.thead}>
@@ -134,12 +130,20 @@ export function Cards() {
               <th className={styles.name}>Name</th>
               <th className={styles.sphere}>Sphere</th>
               <th className={styles.type}>Type</th>
+              <th className={`${styles.cost} ${styles.width1024}`}>Cost</th>
+              <th className={`${styles.power} ${styles.width1024}`}>Power</th>
+              <th className={`${styles.attack} ${styles.width1024}`}>Attack</th>
+              <th className={`${styles.defense} ${styles.width1024}`}>
+                Defense
+              </th>
+              <th className={`${styles.heath} ${styles.width1024}`}>Heath</th>
+              <th className={`${styles.traits} ${styles.width1024}`}>Traits</th>
               <th className={styles.sets}>Sets</th>
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
             {mockStateOne.map((item: CardNoId) => (
-              <Card item={item}></Card>
+              <Card key={item.position} item={item}></Card>
             ))}
           </tbody>
         </table>
