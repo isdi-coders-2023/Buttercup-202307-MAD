@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import Cards from './cards';
+import { Details } from './details';
 
-describe('Given the component Cards', () => {
+describe('Given the componente Details', () => {
   describe('When we render it', () => {
-    render(<Cards></Cards>);
+    render(<Details></Details>);
     test('the component should be in the document', () => {
-      const element = screen.getByText('Name');
+      const element = screen.getByAltText('Card detail');
       expect(element).toBeInTheDocument();
     });
   });
