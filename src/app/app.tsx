@@ -1,13 +1,18 @@
-
+import { AppRoutes } from '../app.routes/app.routes';
 import { Footer } from '../components/footer/footer';
 import { Header } from '../components/header/header';
-import { Home } from '../components/home/home';
+import { MenuOption } from '../types/menu.option';
 
 export function App() {
+  const menuOptions: MenuOption[] = [
+    { path: '/home', label: 'Home' },
+    { path: '/cards', label: 'Cards' },
+    { path: '/error', label: 'Error404' },
+  ];
   return (
     <>
       <Header></Header>
-      <Home></Home>
+      <AppRoutes options={menuOptions}></AppRoutes>
       <Footer></Footer>
     </>
   );
