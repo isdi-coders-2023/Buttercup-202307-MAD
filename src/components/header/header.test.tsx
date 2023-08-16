@@ -2,6 +2,8 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { Header } from './header';
 
+jest.mock('../menu/menu');
+
 describe('Given the componente Header', () => {
   describe('When we render it', () => {
     render(<Header></Header>);

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './menu.module.scss';
 export function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,24 +21,24 @@ export function Menu() {
         <div className={isOpen ? styles.listContainer : styles.hidden}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <a className={styles.a} href="#">
+              <Link className={styles.a} to={'/home'}>
                 Home
-              </a>
+              </Link>
             </li>
             <li className={styles.li}>
-              <a className={styles.a} href="#">
+              <Link className={styles.a} to={'/cards'}>
                 Cards
-              </a>
+              </Link>
             </li>
             <li className={styles.li}>
-              <a className={styles.a} href="#">
+              <Link className={styles.a} to={'/error'}>
                 Create
-              </a>
+              </Link>
             </li>
             <li className={styles.li}>
-              <a className={styles.a} href="#">
-                Favourites
-              </a>
+              <Link className={styles.a} to={'/error'}>
+                Favorites
+              </Link>
             </li>
           </ul>
         </div>
