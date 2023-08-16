@@ -11,7 +11,7 @@ describe('Given the componente Menu', () => {
     });
   });
   describe('Menu', () => {
-    test('should toggle menu visibility when menu button is clicked', () => {
+    test('should toggle menu visibility when menu button is  clicked', () => {
       const { getByAltText, getByText } = render(<Menu />);
       const burguer = getByAltText('');
       const home = getByText('Home');
