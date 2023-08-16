@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { MenuOption } from '../types/menu.option';
 import { AppRoutes } from './app.routes';
@@ -19,46 +19,29 @@ describe('Given the componente AppRoutes', () => {
     { path: '/cards', label: 'Cards' },
     { path: '/error', label: 'Error404' },
   ];
+  const listPaths = (number: number) => {
+    render(
+      <Router
+        initialEntries={['/home', '/cards', '/error']}
+        initialIndex={number}
+      >
+        <AppRoutes options={optionsMock}></AppRoutes>
+      </Router>
+    );
+  };
   describe('When we render it with the route "/home"', () => {
     test('the component should render HomePage', async () => {
-      await act(async () => {
-        render(
-          <Router initialEntries={['/home']} initialIndex={0}>
-            <AppRoutes options={optionsMock}></AppRoutes>
-          </Router>
-        );
-      });
-
+      await waitFor(async () => listPaths(0));
       const element = screen.getByRole('heading', { name: 'Home' });
       expect(element).toBeInTheDocument();
     });
-  });
-
-  describe('Rendering the component using the "cards route"', () => {
-    test('The component should display the "cards route"', async () => {
-      await act(async () => {
-        render(
-          <Router initialEntries={['/cards']} initialIndex={0}>
-            <AppRoutes options={optionsMock}></AppRoutes>
-          </Router>
-        );
-      });
-
+    test('The Cards should be shown by the component', async () => {
+      await waitFor(async () => listPaths(1));
       const element = screen.getByRole('heading', { name: 'Cards' });
       expect(element).toBeInTheDocument();
     });
-  });
-
-  describe('When the "/error" route is used to render the component', () => {
-    test('The ErrorPage should be shown by the component', async () => {
-      await act(async () => {
-        render(
-          <Router initialEntries={['/error']} initialIndex={0}>
-            <AppRoutes options={optionsMock}></AppRoutes>
-          </Router>
-        );
-      });
-
+    test('The component should display the "error route"', async () => {
+      await waitFor(async () => listPaths(2));
       const element = screen.getByRole('heading', { name: 'ErrorPage' });
       expect(element).toBeInTheDocument();
     });
