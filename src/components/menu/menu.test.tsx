@@ -13,12 +13,12 @@ describe('Given the componente Menu', () => {
   describe('Menu', () => {
     test('should toggle menu visibility when menu button is clicked', () => {
       const { getByAltText, getByText } = render(<Menu />);
-      const Button = getByAltText('');
+      const burguer = getByAltText('');
       const home = getByText('Home');
       expect(home).toBeVisible();
-      fireEvent.click(Button);
+      fireEvent.click(burguer);
       expect(home).toBeVisible();
-      fireEvent.click(Button);
+      fireEvent.click(burguer);
       expect(home).toBeVisible();
     });
   });
