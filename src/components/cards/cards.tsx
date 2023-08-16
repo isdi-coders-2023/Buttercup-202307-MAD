@@ -89,7 +89,7 @@ const mockStateOne = [
   },
 ];
 
-export function Cards() {
+export default function Cards() {
   const expansionList: string[] = [
     'Core Set',
     'Revised Core Set',

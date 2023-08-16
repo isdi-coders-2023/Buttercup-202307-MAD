@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { Cards } from './cards';
+import Cards from './cards';
 
 describe('Given the component Cards', () => {
   describe('When we render it', () => {
