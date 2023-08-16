@@ -34,8 +34,8 @@ describe('Given the componente AppRoutes', () => {
     });
   });
 
-  describe('When we render it with the route "/cards"', () => {
-    test('the component should render CardsPage', async () => {
+  describe('Rendering the component using the "cards route"', () => {
+    test('The component should display the "cards route"', async () => {
       await act(async () => {
         render(
           <Router initialEntries={['/cards']} initialIndex={0}>
@@ -49,8 +49,8 @@ describe('Given the componente AppRoutes', () => {
     });
   });
 
-  describe('When we render it with the route "/error"', () => {
-    test('the component should render ErrorPage', async () => {
+  describe('When the "/error" route is used to render the component', () => {
+    test('The ErrorPage should be shown by the component', async () => {
       await act(async () => {
         render(
           <Router initialEntries={['/error']} initialIndex={0}>
