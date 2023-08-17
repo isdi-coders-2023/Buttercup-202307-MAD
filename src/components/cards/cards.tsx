@@ -1,3 +1,5 @@
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../../context/app.context';
 import { CardNoId } from '../../model/card';
 import { Card } from '../card/card';
 import styles from './cards.module.scss';
@@ -90,28 +92,16 @@ const mockStateOne = [
 ];
 
 export default function Cards() {
-  const expansionList: string[] = [
-    'Core Set',
-    'Revised Core Set',
-    'Shadows of Mirkwood',
-    'khazad-dûm',
-    'Dwarrowdelf',
-    'Heirs of Númenor',
-    'Against the Shadow',
-    'The Voice of Isengard',
-    'The Ring-maker',
-    'The Lost Realm',
-    'Angmar Awakened',
-    'Angmar Awakened Campaign extension',
-    'The Grey Havens',
-    'Dream-chaser',
-    'The Sands os Harad',
-    'The Haradrim',
-    'The Wilds of Rhovanion',
-    'Ered Mithrin',
-    'A Shadow in the East',
-    'The Vengeance of Mordor',
-  ];
+  const {
+    cardsContext: { cards, loadCards },
+  } = useContext(AppContext);
+
+  useEffect(() => {
+    loadCards();
+  }, [loadCards]);
+
+  const expansionList = cards;
+
   return (
     <>
       <main className={styles.main}>

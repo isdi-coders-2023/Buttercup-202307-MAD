@@ -26,3 +26,5 @@ export type CardNoId = {
   health?: number;
   threat?: number;
 };
+
+export type Card = CardNoId & { id: number };
