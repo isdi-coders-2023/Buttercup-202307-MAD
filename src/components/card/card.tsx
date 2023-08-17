@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CardNoId } from '../../model/card';
 import styles from './card.module.scss';
 
@@ -9,7 +10,7 @@ export function Card({ item }: Props) {
     <>
       <tr className={styles.trBody}>
         <th className={styles.name}>
-          <a href="">{item.name}</a>
+          <Link to={`/card/${item.name}`}>{item.name}</Link>
         </th>
         <th className={styles.sphere}>{item.sphere_name}</th>
         <th className={styles.type}>{item.type_name}</th>

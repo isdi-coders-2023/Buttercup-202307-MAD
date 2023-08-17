@@ -1,4 +1,4 @@
-import { ApiCardRepository } from './api.TheLordOfTheRings.repository';
+import { ApiCardRepository } from './api.card.repository';
 
 describe('Given TheLordOfTheRings class ', () => {
   describe('When we instantiate it', () => {

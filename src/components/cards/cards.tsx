@@ -93,23 +93,25 @@ const mockStateOne = [
 
 export default function Cards() {
   const {
-    cardsContext: { cards, loadCards },
+    expansionContext: { expansions, loadExpansions },
   } = useContext(AppContext);
 
   useEffect(() => {
-    loadCards();
-  }, [loadCards]);
+    loadExpansions();
+  }, [loadExpansions]);
 
-  const expansionList = cards;
-
+  const expansionList = expansions;
+  const expansionsFilter = expansionList!.filter(
+    (expansion) => expansion.known > 14
+  );
   return (
     <>
       <main className={styles.main}>
         <nav className={styles.navFilter}>
           <ol className={styles.ul}>
-            {expansionList.map((item, index) => (
-              <li key={index}>
-                <a href="">{`${item}`}</a>
+            {expansionsFilter.map((item) => (
+              <li key={item.id}>
+                <a href="">{`${item.name}`}</a>
               </li>
             ))}
           </ol>
@@ -141,3 +143,5 @@ export default function Cards() {
     </>
   );
 }
+
+//`https://ringsdb.com/api/public/cards/${item.code}.json`

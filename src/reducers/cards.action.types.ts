@@ -4,3 +4,7 @@ export const actionTypeNames = {
   create: 'cards@create',
   update: 'cards@update',
 };
+
+export const actionTypeNamesExpansions = {
+  loadExpansion: 'expansions@load',
+};

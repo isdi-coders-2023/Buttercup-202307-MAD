@@ -28,7 +28,7 @@ const charter = {
   imagesrc: '/bundles/cards/01005.png',
 };
 
-export function Details() {
+export default function Details() {
   return (
     <main className={styles.main}>
       <div className={styles.divOne}>
