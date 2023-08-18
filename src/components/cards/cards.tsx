@@ -17,10 +17,6 @@ export default function Cards() {
     cardsContext: { cards, loadCards },
   } = useContext(AppContext);
 
-  useEffect(() => {
-    loadCards('TBR');
-  }, [loadCards]);
-
   const expansionsFilter = expansions!.filter(
     (expansion) => expansion.known > 14
   );
@@ -28,13 +24,18 @@ export default function Cards() {
     <>
       <main className={styles.main}>
         <nav className={styles.navFilter}>
-          <ol className={styles.ul}>
+          <select
+            className={styles.ul}
+            defaultValue={''}
+            onChange={(event) => loadCards(event.target.value)}
+          >
+            <option value="" disabled>
+              SELECT AN EXPANSION
+            </option>
             {expansionsFilter.map((item) => (
-              <li key={item.id}>
-                <a href="">{`${item.name}`}</a>
-              </li>
+              <option value={item.code} key={item.id}>{`${item.name}`}</option>
             ))}
-          </ol>
+          </select>
         </nav>
         <table className={styles.table}>
           <thead className={styles.thead}>
