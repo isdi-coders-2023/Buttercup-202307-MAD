@@ -14,8 +14,8 @@ export class ApiCardRepository implements Repository<Card> {
     const data = await response.json();
     return data;
   }
-  async get(code: string): Promise<Card> {
-    const url = this.urlBase + '/' + code;
+  async get(code: string): Promise<Card[]> {
+    const url = this.urlBase + '/' + code + '.json';
     const response = await fetch(url);
     if (!response.ok)
       throw new Error(`Error ${response.status}: ${response.statusText}`);

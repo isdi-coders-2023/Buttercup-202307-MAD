@@ -10,7 +10,7 @@ export function Card({ item }: Props) {
     <>
       <tr className={styles.trBody}>
         <th className={styles.name}>
-          <Link to={`/card/${item.name}`}>{item.name}</Link>
+          <Link to={`/card/${item.octgnid}`}>{item.name}</Link>
         </th>
         <th className={styles.sphere}>{item.sphere_name}</th>
         <th className={styles.type}>{item.type_name}</th>
