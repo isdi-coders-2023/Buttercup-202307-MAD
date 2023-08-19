@@ -20,7 +20,6 @@ export function AppRoutes({ options }: Props) {
         <Route path={paths[0]} element={<HomePage></HomePage>}></Route>
         <Route path={paths[1]} element={<CardsPage></CardsPage>}></Route>
         <Route path={paths[2]} element={<DetailsPage></DetailsPage>}></Route>
-        {/* <Route path={paths[3]} element={<CreatePage></CreatePage>}></Route> */}
         <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
     </Suspense>
