@@ -31,7 +31,7 @@ export function Menu() {
               </Link>
             </li>
             <li className={styles.li}>
-              <Link className={styles.a} to={'/error'}>
+              <Link className={styles.a} to={'/create'}>
                 Create
               </Link>
             </li>
