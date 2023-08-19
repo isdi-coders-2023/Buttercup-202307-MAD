@@ -1,4 +1,3 @@
-
 import { AppRoutes } from '../app.routes/app.routes';
 import { Footer } from '../components/footer/footer';
 import { Header } from '../components/header/header';
@@ -8,6 +7,8 @@ export function App() {
   const menuOptions: MenuOption[] = [
     { path: '/home', label: 'Home' },
     { path: '/cards', label: 'Cards' },
+    { path: '/card/:id', label: 'Card info' },
+    { path: '/create', label: 'Create' },
     { path: '/error', label: 'Error404' },
   ];
   return (

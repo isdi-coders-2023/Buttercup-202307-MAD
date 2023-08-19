@@ -7,22 +7,26 @@ import { AppRoutes } from './app.routes';
 const MockedHome = jest.fn().mockReturnValue(<h1>Home</h1>);
 jest.mock('../components/home/home', () => MockedHome);
 
-const MockedTodo = jest.fn().mockReturnValue(<h1>Cards</h1>);
-jest.mock('../components/cards/cards', () => MockedTodo);
+const MockedCards = jest.fn().mockReturnValue(<h1>Cards</h1>);
+jest.mock('../components/cards/cards', () => MockedCards);
 
-const MockedAbout = jest.fn().mockReturnValue(<h1>ErrorPage</h1>);
-jest.mock('../components/error/error', () => MockedAbout);
+const MockedDetails = jest.fn().mockReturnValue(<h1>Info</h1>);
+jest.mock('../components/details/details', () => MockedDetails);
+
+const MockedError = jest.fn().mockReturnValue(<h1>ErrorPage</h1>);
+jest.mock('../components/error/error', () => MockedError);
 
 describe('Given the componente AppRoutes', () => {
   const optionsMock: MenuOption[] = [
     { path: '/home', label: 'Home' },
     { path: '/cards', label: 'Cards' },
-    { path: '/error', label: 'Error404' },
+    { path: '/card/:id', label: 'Info' },
+    { path: '/mmwebo', label: 'ErrorPage' },
   ];
   const listPaths = (number: number) => {
     render(
       <Router
-        initialEntries={['/home', '/cards', '/error']}
+        initialEntries={['/home', '/cards', '/card/:id', '/*']}
         initialIndex={number}
       >
         <AppRoutes options={optionsMock}></AppRoutes>
@@ -30,7 +34,7 @@ describe('Given the componente AppRoutes', () => {
     );
   };
   describe('When we render it with the route "/home"', () => {
-    test('the component should render HomePage', async () => {
+    test('the component should render Home', async () => {
       await waitFor(async () => listPaths(0));
       const element = screen.getByRole('heading', { name: 'Home' });
       expect(element).toBeInTheDocument();
@@ -40,8 +44,13 @@ describe('Given the componente AppRoutes', () => {
       const element = screen.getByRole('heading', { name: 'Cards' });
       expect(element).toBeInTheDocument();
     });
-    test('The component should display the "error route"', async () => {
+    test('The Cards should be shown by the component', async () => {
       await waitFor(async () => listPaths(2));
+      const element = screen.getByRole('heading', { name: 'Info' });
+      expect(element).toBeInTheDocument();
+    });
+    test('The component should display the ErrorPage', async () => {
+      await waitFor(async () => listPaths(3));
       const element = screen.getByRole('heading', { name: 'ErrorPage' });
       expect(element).toBeInTheDocument();
     });
