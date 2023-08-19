@@ -1,38 +1,40 @@
 import { ApiExpansionRepository } from './api.expansion.repository';
-describe('Given TheLordOfTheRings class ', () => {
+
+describe('Given the Expansion Repository class ', () => {
   describe('When we instantiate it', () => {
-    const repo = new ApiExpansionRepository('');
-    test('The method get() should be used', () => {
+    const repoExpansion = new ApiExpansionRepository('');
+    test('The method getAll should be called', () => {
       global.fetch = jest.fn().mockResolvedValueOnce({
         ok: true,
         json: jest.fn().mockResolvedValue('Test'),
       });
-      repo.get('');
+      repoExpansion.getAll();
       expect(global.fetch).toHaveBeenCalled();
-    });
-    test('The method get should be used with an error', () => {
-      global.fetch = jest.fn().mockResolvedValueOnce({
-        ok: false,
-        json: jest.fn().mockResolvedValue('Test'),
-      });
-
-      expect(repo.get('')).rejects.toThrow();
     });
     test('The method getAll should be used', () => {
       global.fetch = jest.fn().mockResolvedValueOnce({
+        ok: false,
+        json: jest.fn().mockResolvedValue('Test'),
+      });
+
+      expect(repoExpansion.getAll()).rejects.toThrow();
+    });
+
+    test('The method get() should be called', () => {
+      global.fetch = jest.fn().mockResolvedValueOnce({
         ok: true,
         json: jest.fn().mockResolvedValue('Test'),
       });
-      repo.getAll();
+      repoExpansion.get('');
       expect(global.fetch).toHaveBeenCalled();
     });
-    test('The method getAll should be used with an error', () => {
+    test('The method get should be called with error', () => {
       global.fetch = jest.fn().mockResolvedValueOnce({
         ok: false,
         json: jest.fn().mockResolvedValue('Test'),
       });
 
-      expect(repo.getAll()).rejects.toThrow();
+      expect(repoExpansion.get('')).rejects.toThrow();
     });
   });
 });
