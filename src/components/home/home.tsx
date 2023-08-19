@@ -14,18 +14,18 @@ export default function Home() {
         <article className={styles.article}>
           <h2 className={styles.h2}>The Lord of the Rings: The Card Game</h2>
           <img
-            src="https://www.somosjuegos.com/wp-content/uploads/2021/10/mec101es_1.jpg"
+            src="../../assets/caja-base.jpg"
             alt="Caja de inicio"
             className={styles.imgOne}
           />
           <div className={styles.div}>
             <img
-              src="https://www.somosjuegos.com/wp-content/uploads/2021/10/mec101es_3.jpg"
+              src="../../assets/cartas-caja-base.jpg"
               alt="cartas de caja de inicio"
               className={styles.imgTwo}
             />
             <img
-              src="https://www.somosjuegos.com/wp-content/uploads/2021/10/mec101es_2.jpg"
+              src="../../assets/detalles-caja-base.jpg"
               alt="detalles de caja de inicio"
               className={styles.imgTwo}
             />
