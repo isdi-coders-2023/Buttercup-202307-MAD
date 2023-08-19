@@ -32,8 +32,11 @@ export default function Cards() {
             <option value="" disabled>
               SELECT AN EXPANSION
             </option>
+            <option value="">View All Expansion</option>
             {expansionsFilter.map((item) => (
-              <option value={item.code} key={item.id}>{`${item.name}`}</option>
+              <option value={item.code + '.json'} key={item.id}>
+                {`${item.name}`}
+              </option>
             ))}
           </select>
         </nav>
