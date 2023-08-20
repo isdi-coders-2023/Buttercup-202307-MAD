@@ -52,8 +52,7 @@ export default function Cards() {
             className={styles.ul}
             defaultValue={''}
             onChange={(event) => {
-              loadCards(event.target.value),
-                setCurrentPage(currentPage * 0 + 1);
+              loadCards(event.target.value), setCurrentPage(1);
             }}
           >
             <option value="" disabled>
@@ -85,8 +84,8 @@ export default function Cards() {
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
-            {paginatedData.map((item: CardNoId, index) => (
-              <Card key={item.octgnid + index} item={item}></Card>
+            {paginatedData.map((item: CardNoId) => (
+              <Card key={item.octgnid + item.code} item={item}></Card>
             ))}
           </tbody>
         </table>
