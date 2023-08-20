@@ -5,10 +5,12 @@ export function Menu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenu = () => {
-    if (isOpen) {
-      setIsOpen(false);
-    } else {
-      setIsOpen(true);
+    if (screen.width < 1024) {
+      if (isOpen) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
     }
   };
 
@@ -21,12 +23,12 @@ export function Menu() {
         <div className={isOpen ? styles.listContainer : styles.hidden}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link className={styles.a} to={'/home'}>
+              <Link className={styles.a} to={'/home'} onClick={handleMenu}>
                 Home
               </Link>
             </li>
             <li className={styles.li}>
-              <Link className={styles.a} to={'/cards'}>
+              <Link className={styles.a} to={'/cards'} onClick={handleMenu}>
                 Cards
               </Link>
             </li>
