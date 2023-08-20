@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../context/app.context';
 import { CardNoId } from '../../model/card';
 import { Card } from '../card/card';
@@ -20,6 +20,30 @@ export default function Cards() {
   const expansionsFilter = expansions!.filter(
     (expansion) => expansion.known > 14
   );
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const pageSize = 25;
+  const pageCount = Math.ceil(cards!.length / pageSize);
+  let paginatedData = cards!.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < pageCount) {
+      setCurrentPage(currentPage + 1);
+      paginatedData = [];
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      paginatedData = [];
+    }
+  };
+
   return (
     <>
       <main className={styles.main}>
@@ -27,13 +51,18 @@ export default function Cards() {
           <select
             className={styles.ul}
             defaultValue={''}
-            onChange={(event) => loadCards(event.target.value)}
+            onChange={(event) => {
+              loadCards(event.target.value), setCurrentPage(1);
+            }}
           >
             <option value="" disabled>
               SELECT AN EXPANSION
             </option>
+            <option value="">View All Expansion</option>
             {expansionsFilter.map((item) => (
-              <option value={item.code} key={item.id}>{`${item.name}`}</option>
+              <option value={item.code + '.json'} key={item.id}>
+                {`${item.name}`}
+              </option>
             ))}
           </select>
         </nav>
@@ -55,11 +84,30 @@ export default function Cards() {
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
-            {cards!.map((item: CardNoId) => (
-              <Card key={item.position} item={item}></Card>
+            {paginatedData.map((item: CardNoId) => (
+              <Card key={item.octgnid + item.code} item={item}></Card>
             ))}
           </tbody>
         </table>
+        <div className={styles.buttonDiv}>
+          <button
+            role="previousButton"
+            className={styles.previousButton}
+            onClick={handlePreviousPage}
+          >
+            Previous
+          </button>
+          <button
+            role="nextButton"
+            className={styles.nextButton}
+            onClick={handleNextPage}
+          >
+            Next
+          </button>
+        </div>
+        <span>
+          {currentPage}/{pageCount}
+        </span>
       </main>
     </>
   );

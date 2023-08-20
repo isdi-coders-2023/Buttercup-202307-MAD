@@ -33,6 +33,24 @@
       }
     }
   }
+  .buttonDiv {
+    display: flex;
+    gap: 2em;
+    .previousButton {
+      width: 10em;
+      height: 2em;
+      border-radius: 20px;
+      background: #a92222;
+      color: white;
+    }
+    .nextButton {
+      width: 10em;
+      height: 2em;
+      border-radius: 20px;
+      background: #a92222;
+      color: white;
+    }
+  }
 }
 .width1024 {
   display: none;

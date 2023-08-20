@@ -1,5 +1,15 @@
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../../context/app.context';
 import styles from './home.module.scss';
 export default function Home() {
+  const {
+    cardsContext: { loadCards },
+  } = useContext(AppContext);
+
+  useEffect(() => {
+    loadCards('');
+  }, [loadCards]);
+
   return (
     <>
       <main className={styles.main}>
