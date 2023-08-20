@@ -33,24 +33,3 @@ export const loadExpansionActionCreator = (
     payload: data,
   };
 };
-
-export const createCardActionCreator = (data: Card): CardAction => {
-  return {
-    type: actionTypeNames.create,
-    payload: data,
-  };
-};
-
-export const updateCardActionCreator = (data: Card): CardAction => {
-  return {
-    type: actionTypeNames.update,
-    payload: data,
-  };
-};
-
-export const deleteCardActionCreator = (data: Card['id']): CardAction => {
-  return {
-    type: actionTypeNames.delete,
-    payload: data,
-  };
-};

@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { MenuOption } from '../types/menu.option';
 
 const HomePage = lazy(() => import('../components/home/home'));
-// const CreatePage = lazy(() => import('../components/create/create'));
 const CardsPage = lazy(() => import('../components/cards/cards'));
 const DetailsPage = lazy(() => import('../components/details/details'));
 const ErrorPage = lazy(() => import('../components/error/error'));
