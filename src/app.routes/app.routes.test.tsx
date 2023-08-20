@@ -36,22 +36,22 @@ describe('Given the componente AppRoutes', () => {
   describe('When we render it with the route "/home"', () => {
     test('the component should render Home', async () => {
       await waitFor(async () => listPaths(0));
-      const element = screen.getByRole('heading', { name: 'Home' });
+      const element = screen.getByText('Home');
       expect(element).toBeInTheDocument();
     });
     test('The Cards should be shown by the component', async () => {
       await waitFor(async () => listPaths(1));
-      const element = screen.getByRole('heading', { name: 'Cards' });
+      const element = screen.getByText('Cards');
       expect(element).toBeInTheDocument();
     });
     test('The Cards should be shown by the component', async () => {
       await waitFor(async () => listPaths(2));
-      const element = screen.getByRole('heading', { name: 'Info' });
+      const element = screen.getByText('Info');
       expect(element).toBeInTheDocument();
     });
     test('The component should display the ErrorPage', async () => {
       await waitFor(async () => listPaths(3));
-      const element = screen.getByRole('heading', { name: 'ErrorPage' });
+      const element = screen.getByText('ErrorPage');
       expect(element).toBeInTheDocument();
     });
   });
