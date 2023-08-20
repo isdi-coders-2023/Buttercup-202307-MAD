@@ -11,7 +11,7 @@ describe('Given the componente Menu', () => {
       </MemoryRouter>
     );
     test('the component should be in the document', () => {
-      const element = screen.getByText('Create');
+      const element = screen.getByText('Cards');
       expect(element).toBeInTheDocument();
     });
   });
