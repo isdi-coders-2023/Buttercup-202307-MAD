@@ -8,7 +8,6 @@ export function App() {
     { path: '/home', label: 'Home' },
     { path: '/cards', label: 'Cards' },
     { path: '/card/:id', label: 'Card info' },
-    { path: '/create', label: 'Create' },
     { path: '/error', label: 'Error404' },
   ];
   return (

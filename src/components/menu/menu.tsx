@@ -30,16 +30,6 @@ export function Menu() {
                 Cards
               </Link>
             </li>
-            <li className={styles.li}>
-              <Link className={styles.a} to={'/create'}>
-                Create
-              </Link>
-            </li>
-            <li className={styles.li}>
-              <Link className={styles.a} to={'/error'}>
-                Favorites
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
