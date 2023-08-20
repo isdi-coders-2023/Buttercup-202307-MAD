@@ -91,12 +91,17 @@ export default function Cards() {
         </table>
         <div className={styles.buttonDiv}>
           <button
+            role="previousButton"
             className={styles.previousButton}
             onClick={handlePreviousPage}
           >
             Previous
           </button>
-          <button className={styles.nextButton} onClick={handleNextPage}>
+          <button
+            role="nextButton"
+            className={styles.nextButton}
+            onClick={handleNextPage}
+          >
             Next
           </button>
         </div>
