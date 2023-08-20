@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <img
-        src="../../../assets/the-ring.png"
+        src="../../../assets/the-ring.svg"
         alt="El anillo unico"
         className={styles.img}
       />
